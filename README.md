@@ -16,7 +16,14 @@
 - common  			公共部分
 - contanst			常量等基本定义
 - webservice		服务接口
-	-restful		服务接口-restful
-	-soap			服务接口-soap
+	-restful		服务接口restful
+	-soap			服务接口soap
+```
+
+#### maven打包使用
+
+```
+mvn clean install:将打包的jar添加到仓库（本地）
+mvn clean package: 打包
 ```
 
