@@ -8,6 +8,7 @@
 
 + pom.xml: 基础依赖，具体服务包会继承这个pom的依赖，不要重复引用
 
+  > 环境统一使用IntelliJ IDEA 作为开发工具；
   > 服务包和业务实现包以子项目形式存在，如机构中的`sp-patrol`和`patrol-object`
 
 
@@ -15,7 +16,7 @@
 ```markdown
 - common  			公共部分
 - contanst			常量等基本定义
-- webservice		服务接口
+- webservice		        服务接口
 	-restful		服务接口restful
 	-soap			服务接口soap
 ```
