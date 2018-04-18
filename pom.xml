@@ -12,8 +12,6 @@
         <module>sp-patrol</module>
         <module>patrol-object</module>
     </modules>
-
-
     <properties>
         <spring.version>4.2.6.RELEASE</spring.version>
         <slf4j.version>1.7.7</slf4j.version>
