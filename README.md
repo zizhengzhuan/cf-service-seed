@@ -10,3 +10,13 @@
 
   > 服务包和业务实现包以子项目形式存在，如机构中的`sp-patrol`和`patrol-object`
 
+
+#### 子项目的结构
+```markdown
+- common  			公共部分
+- contanst			常量等基本定义
+- webservice		服务接口
+	-restful		服务接口-restful
+	-soap			服务接口-soap
+```
+
