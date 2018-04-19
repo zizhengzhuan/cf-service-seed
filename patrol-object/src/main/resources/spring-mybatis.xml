@@ -14,7 +14,7 @@
     <!-- 添加注解驱动 -->
     <context:annotation-config/>
     <!-- 自动扫描 -->
-    <context:component-scan base-package="com.zzht.component"/>
+    <!--<context:component-scan base-package="com.zzht.component"/>-->
 
     <!-- 引入配置文件 -->
     <context:property-placeholder location="classpath:datasource/jdbc.properties" ignore-unresolvable="true"/>
@@ -40,7 +40,7 @@
     <!-- DAO接口所在包名，Spring会自动查找其下的类 --><!--只扫描带@Repository标签类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
           p:annotationClass="org.springframework.stereotype.Repository"
-          p:basePackage="com.zzht.component.patrol.dao"
+          p:basePackage="com.zzht.component.*.dao"
           p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
 
     <!-- 事务管理 -->
