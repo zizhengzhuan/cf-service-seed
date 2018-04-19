@@ -12,6 +12,7 @@
     <artifactId>sp-patrol</artifactId>
 
     <dependencies>
+        
         <dependency>
             <groupId>com.zzht</groupId>
             <artifactId>patrol-object</artifactId>
