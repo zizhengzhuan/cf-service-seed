@@ -15,10 +15,22 @@
        xmlns:context="http://www.springframework.org/schema/context"
 >
     <!-- 添加注解驱动 -->
+<<<<<<< .mine
+    <context:annotation-config/>
+    <context:component-scan base-package="com.zzht.component" />
+     <bean id="personService" class="com.zzht.component.patrol.api.PersonServiceImpl"/> 
+         <bean id="ServerCore" class="com.zzht.service.patrol.common.ServiceCore">
+||||||| .r4
+    <context:annotation-config/>
+    <!-- 自动扫描 -->
+
+    <bean id="ServerCore" class="com.zzht.service.patrol.common.ServiceCore">
+=======
     <!--<context:annotation-config/>-->
 
 
     <bean id="serverCore" class="com.zzht.service.patrol.common.ServiceCore">
+>>>>>>> .r12
     </bean>
 
     <bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
