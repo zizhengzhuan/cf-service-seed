@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * @author kunhour
  * Created by kunhour on 2018/4/16.
  *
  */
-@Service
+@Service("dPersonService")
 public class PersonServiceImpl implements PersonService {
 
     @Autowired

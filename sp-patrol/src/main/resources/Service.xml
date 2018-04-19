@@ -16,7 +16,6 @@
 >
     <!-- 添加注解驱动 -->
     <context:annotation-config/>
-    <!-- 自动扫描 -->
 
     <bean id="serverCore" class="com.zzht.service.patrol.common.ServiceCore">
     </bean>

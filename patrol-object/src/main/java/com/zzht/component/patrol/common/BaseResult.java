@@ -1,5 +1,7 @@
 package com.zzht.component.patrol.common;
 
+import javax.ws.rs.core.Response;
+
 /**
  * 基本返回类型
  * @author kunhour
@@ -18,7 +20,7 @@ public class BaseResult {
 
     public BaseResult() {}
 
-    private BaseResult(int code,String message,Object value) {
+    private BaseResult (int code,String message,Object value) {
         this.code = code;
         this.message = message;
         this.value = value;
