@@ -4,20 +4,12 @@
        xmlns:jaxrs="http://cxf.apache.org/jaxrs"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-        http://cxf.apache.org/jaxrs
-        http://cxf.apache.org/schemas/jaxrs.xsd
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 
     <jaxrs:server id="restfulWebService" address="/restful">
-        <!--&lt;!&ndash;输入拦截器设置&ndash;&gt;
-        <jaxrs:inInterceptors>
-        </jaxrs:inInterceptors>
-
-        &lt;!&ndash;输出拦截器设置&ndash;&gt;
-        <jaxrs:outInterceptors>
-        </jaxrs:outInterceptors>-->
 
         <!--serviceBeans：暴露的WebService服务类-->
         <jaxrs:serviceBeans>
@@ -31,7 +23,6 @@
         <jaxrs:inInterceptors>
             <bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor"/>
         </jaxrs:inInterceptors>
-
 
     </jaxrs:server>
 </beans>

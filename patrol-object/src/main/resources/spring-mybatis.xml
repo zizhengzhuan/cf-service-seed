@@ -40,7 +40,7 @@
     <!-- DAO接口所在包名，Spring会自动查找其下的类 --><!--只扫描带@Repository标签类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
           p:annotationClass="org.springframework.stereotype.Repository"
-          p:basePackage="com.zzht.patrol.dao"
+          p:basePackage="com.zzht.component.patrol.dao"
           p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
 
     <!-- 事务管理 -->

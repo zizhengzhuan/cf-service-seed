@@ -15,7 +15,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
 >
     <!-- 添加注解驱动 -->
-    <context:annotation-config/>
+    <!--<context:annotation-config/>-->
+
 
     <bean id="serverCore" class="com.zzht.service.patrol.common.ServiceCore">
     </bean>
