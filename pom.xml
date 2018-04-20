@@ -26,6 +26,9 @@
         <custom.lib>lib</custom.lib>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
+        <!--jar包输出路径，默认是${project.build.directory}，也就是arget-->
+        <output.basedir>D:/Jetty/webapps/ServiceEngine/WEB-INF</output.basedir>
+
     </properties>
     
 	<dependencies>
@@ -225,6 +228,7 @@
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                     </archive>
+                    <outputDirectory>${output.basedir}/services</outputDirectory>
                 </configuration>
             </plugin>
 
@@ -241,7 +245,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>
-                                ${project.build.directory}/${custom.lib}
+                                ${output.basedir}/${custom.lib}
                             </outputDirectory>
                         </configuration>
                     </execution>
