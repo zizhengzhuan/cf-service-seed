@@ -228,7 +228,7 @@
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                     </archive>
-                    <outputDirectory>${output.basedir}/services</outputDirectory>
+                    <!--<outputDirectory>${output.basedir}/services</outputDirectory>-->
                 </configuration>
             </plugin>
 
