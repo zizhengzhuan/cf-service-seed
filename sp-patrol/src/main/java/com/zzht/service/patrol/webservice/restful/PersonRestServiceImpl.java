@@ -3,6 +3,8 @@ package com.zzht.service.patrol.webservice.restful;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zzht.service.patrol.common.ResultWithPage;
+import com.zzht.service.patrol.common.ResultTool;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSON;
@@ -32,7 +34,10 @@ public class PersonRestServiceImpl implements PersonRestService{
             list.add(p);
         */
         list= personService.queryPerson(new PersonExample());
-        return ResponseTool.strResponse(JSON.toJSONString(list));
+		ResultWithPage response = new ResultWithPage();
+        response.setData(list);
+        response.setTotal(2);
+        return ResultTool.toResponse(response);
     }
 
 	@Override
