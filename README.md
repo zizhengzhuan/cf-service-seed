@@ -93,7 +93,7 @@ Tomcat 8.0
 ##
 [PREPARE] 
 配置ServiceEngine的web.xml, 需要配置MyBatis配置文件和筛选器，如下图
-![](https://github.com/zizhengzhuan/cf-service-seed/blob/master/art/tomcat-debug-prepare.png) 
+![](https://github.com/zizhengzhuan/cf-service-seed/raw/master/art/tomcat-debug-prepare.png) 
 ![](https://github.com/zizhengzhuan/cf-service-seed/blob/master/art/tomcat-debug-config-step0.png) 
 
 
