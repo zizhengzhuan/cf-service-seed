@@ -25,7 +25,7 @@
         <hopeobject.version>2.1.5</hopeobject.version>
         <custom.lib>lib</custom.lib>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <!--jar包输出路径，默认是${project.build.directory}，也就是arget-->
         <output.basedir>C:/Program Files/Apache Software Foundation/Tomcat 8.0/webapps/ServiceEngine/WEB-INF</output.basedir>
 
