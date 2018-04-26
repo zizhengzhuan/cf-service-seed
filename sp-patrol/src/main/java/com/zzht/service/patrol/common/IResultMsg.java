@@ -10,9 +10,9 @@ package com.zzht.service.patrol.common;
 public interface IResultMsg {
     /**
      * 返回的编码
-     * @return String
+     * @return int
      */
-    String getCode();
+    int getCode();
 
     /**
      * 返回的消息

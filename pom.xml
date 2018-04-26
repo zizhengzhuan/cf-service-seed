@@ -27,7 +27,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
         <!--jar包输出路径，默认是${project.build.directory}，也就是arget-->
-        <output.basedir>D:/Jetty/webapps/ServiceEngine/WEB-INF</output.basedir>
+        <output.basedir>C:/Program Files/Apache Software Foundation/Tomcat 8.0/webapps/ServiceEngine/WEB-INF</output.basedir>
 
     </properties>
     
@@ -196,7 +196,7 @@
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
-			<version>2.1</version>
+			<version>2.0.1</version>
 		</dependency>
 
 	</dependencies>

@@ -9,8 +9,8 @@ package com.zzht.service.patrol.common;
  */
 public class Result<T>{
     private boolean success = true;
-    private String msg="SUCCESS";
-    private String code="200";
+    private String msg = "SUCCESS";
+    private int code = 200;
     private T data;
 
     public boolean isSuccess() {
@@ -29,11 +29,11 @@ public class Result<T>{
         this.msg = msg;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
