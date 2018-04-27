@@ -17,7 +17,7 @@
     <!--<context:component-scan base-package="com.zzht.component"/>-->
 
     <!-- 引入配置文件 -->
-    <context:property-placeholder location="classpath:datasource/jdbc.properties" ignore-unresolvable="true"/>
+    <context:property-placeholder location="conf/application.properties" ignore-unresolvable="true"/>
 
     <!-- 配置数据源 -->
     <bean id="dataSource" destroy-method="close"

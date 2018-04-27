@@ -89,7 +89,9 @@ Windows 10
 JDK 1.8
 Tomcat 8.0
 前置条件，在调试运行项目之前需要了解基础的CityServer基础知识，准备基础运行环境和配置文件，[后续会上传基础配置文件]
-##
+
+
+
 [PREPARE] 
 配置ServiceEngine的web.xml, 需要配置MyBatis配置文件和筛选器，如下图
 ![](https://github.com/zizhengzhuan/cf-service-seed/raw/master/art/tomcat-debug-prepare.png) 
