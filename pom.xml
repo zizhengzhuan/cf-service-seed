@@ -247,6 +247,8 @@
                             <outputDirectory>
                                 ${output.basedir}/${custom.lib}
                             </outputDirectory>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                            <!--<overWriteReleases>true</overWriteReleases>-->
                         </configuration>
                     </execution>
                 </executions>
