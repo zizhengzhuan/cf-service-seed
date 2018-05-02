@@ -6,7 +6,7 @@
     <groupId>com.zzht</groupId>
     <artifactId>cf-project</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-snapshots</version>
     <modules>
         <module>sp-patrol</module>
         <module>patrol-object</module>
@@ -26,7 +26,10 @@
         <custom.lib>lib</custom.lib>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
-        <!--jar包输出路径，默认是${project.build.directory}，也就是target-->
+        <!--jar包输出路径，默认是${project.build.directory}，也就是target
+            也可以自定义输出路径，如：D:/tomcat85_30/webapps/ServiceEngine/WEB-INF
+        -->
+        <!--<output.basedir>${project.build.directory}</output.basedir>-->
         <output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>
 
     </properties>
@@ -199,7 +202,17 @@
 			<version>2.0.1</version>
 		</dependency>
 
-	</dependencies>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-service-description</artifactId>
+            <version>3.0.0-milestone1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jettison</groupId>
+            <artifactId>jettison</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+    </dependencies>
 
 	<!-- 构建 -->
 	<build>
@@ -215,45 +228,21 @@
                     <target>${jdk.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>false</addClasspath>
-                            <classpathPrefix>${custom.lib}/</classpathPrefix>
-                            <!--<mainClass></mainClass>-->
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        </manifest>
-                    </archive>
-                    <!--<outputDirectory>${output.basedir}/services</outputDirectory>-->
-                </configuration>
-            </plugin>
-
-            <!-- 拷贝依赖的jar包到lib目录 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>
-                                ${output.basedir}/${custom.lib}
-                            </outputDirectory>
-                            <overWriteSnapshots>true</overWriteSnapshots>
-                            <!--<overWriteReleases>true</overWriteReleases>-->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>maven-releases</name>
+            <url>http://192.168.8.130:8081/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://192.168.8.130:8081/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
 </project>

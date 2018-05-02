@@ -24,7 +24,7 @@ public class PersonRestServiceImpl implements PersonRestService{
 	private PersonService personService;
 
     @Override
-    public Object queryPerson() {
+    public Object queryPerson(String userId) {
 
         List<Person> list = new ArrayList<>();
         /*
