@@ -29,11 +29,9 @@
         <!--jar包输出路径，默认是${project.build.directory}，也就是target
             也可以自定义输出路径，如：D:/tomcat85_30/webapps/ServiceEngine/WEB-INF
         -->
-        <!--<output.basedir>${project.build.directory}</output.basedir>-->
-        <output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>
-
+        <output.basedir>${project.build.directory}</output.basedir>
+        <!--<output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>-->
     </properties>
-    
 	<dependencies>
         <!-- spring核心包 -->
         <dependency>
