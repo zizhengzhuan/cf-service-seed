@@ -72,7 +72,7 @@
                                 ${output.basedir}/lib
                             </outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                            <!--<overWriteReleases>true</overWriteReleases>-->
+                            <overWriteReleases>true</overWriteReleases>
                         </configuration>
                     </execution>
                 </executions>

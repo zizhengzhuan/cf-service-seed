@@ -35,10 +35,10 @@ public class PersonRestServiceImpl implements PersonRestService{
         */
 
         list= personService.queryPerson(new PersonExample());
-		ResultWithPage response = new ResultWithPage<List<Person>>();
-        response.setData(list);
-        response.setTotal(2);
-        return ResultTool.toResponse(response);
+		ResultWithPage result = new ResultWithPage<List<Person>>();
+        result.setData(list);
+        result.setTotal(2);
+        return ResultTool.toResponse(result);
     }
 
 	@Override
