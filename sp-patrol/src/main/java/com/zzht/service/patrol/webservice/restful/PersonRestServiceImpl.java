@@ -3,8 +3,8 @@ package com.zzht.service.patrol.webservice.restful;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zzht.service.patrol.common.ResultWithPage;
-import com.zzht.service.patrol.common.ResultTool;
+import com.zzht.color.flower.util.response.ResultWithPage;
+import com.zzht.color.flower.util.tool.ResultTool;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSON;
@@ -33,8 +33,9 @@ public class PersonRestServiceImpl implements PersonRestService{
             p.setUserName("柯尊超");
             list.add(p);
         */
+
         list= personService.queryPerson(new PersonExample());
-		ResultWithPage response = new ResultWithPage();
+		ResultWithPage response = new ResultWithPage<List<Person>>();
         response.setData(list);
         response.setTotal(2);
         return ResultTool.toResponse(response);
