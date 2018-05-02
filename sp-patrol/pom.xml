@@ -41,7 +41,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <classpathPrefix>${custom.lib}/</classpathPrefix>
+                            <classpathPrefix>lib</classpathPrefix>
                             <!--<mainClass></mainClass>-->
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
@@ -64,7 +64,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>
-                                ${output.basedir}/${custom.lib}
+                                ${output.basedir}/lib
                             </outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>
                             <!--<overWriteReleases>true</overWriteReleases>-->

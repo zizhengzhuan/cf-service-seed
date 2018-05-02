@@ -23,9 +23,8 @@
         <secore.version>2.1.0</secore.version>
         <fastjson.version>1.2.30</fastjson.version>
         <hopeobject.version>2.1.5</hopeobject.version>
-        <custom.lib>lib</custom.lib>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <!--jar包输出路径，默认是${project.build.directory}，也就是target
             也可以自定义输出路径，如：D:/tomcat85_30/webapps/ServiceEngine/WEB-INF
         -->
