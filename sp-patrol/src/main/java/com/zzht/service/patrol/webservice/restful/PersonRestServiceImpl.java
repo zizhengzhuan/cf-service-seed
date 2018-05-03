@@ -1,14 +1,12 @@
 package com.zzht.service.patrol.webservice.restful;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import com.zzht.cole.flower.common.response.Result;
 import com.zzht.cole.flower.common.response.ResultWithPage;
 import com.zzht.cole.flower.common.tool.ResultTool;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.alibaba.fastjson.JSON;
-import com.ecity.server.response.ResponseTool;
 import com.zzht.component.patrol.api.PersonService;
 import com.zzht.component.patrol.entity.Person;
 import com.zzht.component.patrol.entity.PersonExample;
@@ -20,22 +18,23 @@ import com.zzht.component.patrol.entity.PersonExample;
  */
 // @RestController
 public class PersonRestServiceImpl implements PersonRestService{
+
 	@Autowired
 	private PersonService personService;
 
     @Override
     public Object queryPerson(String userId) {
-
-        List<Person> list = new ArrayList<>();
         /*
-            Person p = new Person();
+        List<Person> list = new ArrayList<Person>();
+
+            PersonPerson p = new Person();
             p.setAge(1);
             p.setUserName("柯尊超");
             list.add(p);
         */
 
-        list= personService.queryPerson(new PersonExample());
-		ResultWithPage result = new ResultWithPage<List<Person>>();
+        List<Person> list= personService.queryPerson(new PersonExample());
+		ResultWithPage<List<Person>> result = new ResultWithPage<>();
         result.setData(list);
         result.setTotal(2);
         return ResultTool.toResponse(result);
@@ -44,7 +43,9 @@ public class PersonRestServiceImpl implements PersonRestService{
 	@Override
 	public Object getPerson() {
 		Person person = personService.selectByPrimaryKey(1L);
-		return ResponseTool.strResponse(JSON.toJSONString(person));
+        Result<Person> result = new Result<>();
+        result.setData(person);
+        return ResultTool.toResponse(result);
 	}
 
 

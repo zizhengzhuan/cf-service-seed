@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.zzht</groupId>
             <artifactId>patrol-object</artifactId>
-            <version>${parent.version}</version>
+            <version>1.0.0-snapshots</version>
         </dependency>
         <dependency>
             <groupId>com.zzht</groupId>
