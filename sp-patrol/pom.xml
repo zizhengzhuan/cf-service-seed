@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>com.zzht</groupId>
-            <artifactId>color-flower-util </artifactId>
+            <artifactId>cole-flower-common </artifactId>
             <version>1.0.0-RELEASE</version>
         </dependency>
     </dependencies>

@@ -66,6 +66,8 @@ public class ServiceCore implements IService {
         //1.加载服务引用的jar文件，一般当前服务对应的jar文件放在services目录下的一个自定义文件夹中
 //        loadOwnerJar();
 
+
+
     }
 
     public ServiceCore() {
