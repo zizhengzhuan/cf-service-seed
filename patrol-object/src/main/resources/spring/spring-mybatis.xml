@@ -35,7 +35,7 @@
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
-          p:mapperLocations="classpath:sqlmaps/*.xml"/>
+          p:mapperLocations="classpath:sqlmaps/PersonMapper.xml"/>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 --><!--只扫描带@Repository标签类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
@@ -49,6 +49,5 @@
           p:dataSource-ref="dataSource"/>
 
     <tx:annotation-driven transaction-manager="transactionManager" />
-
 
 </beans>
