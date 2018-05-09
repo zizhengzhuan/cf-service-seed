@@ -18,6 +18,11 @@
             <artifactId>demo-object</artifactId>
             <version>1.0-snapshots</version>
         </dependency>
+        <dependency>
+            <groupId>com.zzht</groupId>
+            <artifactId>cole-flower-common </artifactId>
+            <version>1.0.0-RELEASE</version>
+        </dependency>
     </dependencies>
 
     <!-- 构建 -->
