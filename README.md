@@ -22,7 +22,7 @@
 #### 2.1 命名规范
 
 * 服务包以`sp-`开头，如`sp-demo`；
-* 服务实现包以`-object`结尾，如`demo-demo`;
+* 服务实现包以`-object`结尾，如`demo-object`;
 * 服务包的基础报名前缀为`com.zzht.service.xxxx`；
 * 业务实现包的报名前缀为`com.zzht.component.xxxx`;
 
