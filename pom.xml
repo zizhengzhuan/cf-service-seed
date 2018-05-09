@@ -6,7 +6,7 @@
     <groupId>com.zzht</groupId>
     <artifactId>cf-project</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-snapshots</version>
+    <version>1.0-snapshots</version>
     <modules>
         <module>sp-demo</module>
         <module>demo-object</module>

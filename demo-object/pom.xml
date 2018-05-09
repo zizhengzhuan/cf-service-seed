@@ -5,7 +5,7 @@
     <parent>
         <artifactId>cf-project</artifactId>
         <groupId>com.zzht</groupId>
-        <version>1.0.0-snapshots</version>
+        <version>1.0-snapshots</version>
     </parent>
         <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
