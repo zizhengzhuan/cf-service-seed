@@ -8,8 +8,8 @@
     <packaging>pom</packaging>
     <version>1.0.0-snapshots</version>
     <modules>
-        <module>sp-patrol</module>
-        <module>patrol-object</module>
+        <module>sp-demo</module>
+        <module>demo-object</module>
     </modules>
 
     <properties>
@@ -28,8 +28,8 @@
         <!--jar包输出路径，默认是${project.build.directory}，也就是target
             也可以自定义输出路径，如：D:/tomcat85_30/webapps/ServiceEngine/WEB-INF
         -->
-        <!--<output.basedir>${project.build.directory}</output.basedir>-->
-        <output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>
+        <output.basedir>${project.build.directory}</output.basedir>
+        <!--<output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>-->
     </properties>
 	<dependencies>
         <!-- spring核心包 -->
@@ -209,6 +209,23 @@
             <artifactId>jettison</artifactId>
             <version>1.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.20</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.zzht</groupId>
+            <artifactId>cole-flower-common </artifactId>
+            <version>1.0.0-RELEASE</version>
+        </dependency>
     </dependencies>
 
 	<!-- 构建 -->
@@ -223,6 +240,13 @@
                     <encoding>utf-8</encoding>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>

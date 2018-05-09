@@ -30,12 +30,12 @@
 
 ```java
 //#1.服务包
-pakacge com.zzht.service.patrol.common;
+pakacge com.zzht.service.demo.common;
 //......
 //....
 
 // #2.实现包
-pakacge com.zzht.service.patrol.webservice
+pakacge com.zzht.service.demo.webservice
 //....
 //....
 
