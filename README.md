@@ -70,7 +70,7 @@ pakacge com.zzht.service.demo.webservice
 ## resource
 - sqlmaps				mybaties数据访问配置文件目录
 	- XxxxMapper.xml	mapper配置
-- sprig-mabaties.xml	mybaties与spring集成配置
+- spring/sprig-mabaties.xml	mybaties与spring集成配置
 ```
 
 
@@ -94,6 +94,9 @@ Tomcat 8.0
 
 [PREPARE] 
 配置ServiceEngine的web.xml, 需要配置MyBatis配置文件和筛选器，如下图
+
+**私有与spring的集成都放在spring下面，classpath:/spring/*.xml**
+
 ![](https://github.com/zizhengzhuan/cf-service-seed/raw/master/art/tomcat-debug-prepare.png) 
 ![](https://github.com/zizhengzhuan/cf-service-seed/raw/master/art/tomcat-debug-config-step0.png) 
 
