@@ -7,9 +7,9 @@
 
 #### 一、结构
 
-+ sp-patrol: 单独的服务包
++ sp-demo: 单独的服务包
 
-+ patrol-object: 服务对应的业务实现
++ demo-object: 服务对应的业务实现
 
 + pom.xml: 基础依赖，具体服务包会继承这个pom的依赖，不要重复引用
 
@@ -21,8 +21,8 @@
 
 #### 2.1 命名规范
 
-* 服务包以`sp-`开头，如`sp-patrol`；
-* 服务实现包以`-object`结尾，如`patrol-patrol`;
+* 服务包以`sp-`开头，如`sp-demo`；
+* 服务实现包以`-object`结尾，如`demo-demo`;
 * 服务包的基础报名前缀为`com.zzht.service.xxxx`；
 * 业务实现包的报名前缀为`com.zzht.component.xxxx`;
 
