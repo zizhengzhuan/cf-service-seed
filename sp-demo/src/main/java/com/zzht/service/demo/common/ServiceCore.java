@@ -52,6 +52,8 @@ public class ServiceCore implements IService {
             mapResultPath = "map";
         }
 
+
+
         String basePath = this.SEServer.getHome();
         basePath = basePath.substring(0, basePath.length() - 1);
         basePath = basePath.substring(0, basePath.lastIndexOf(File.separator));

@@ -5,6 +5,7 @@ import java.util.List;
 import com.zzht.cole.flower.common.response.Result;
 import com.zzht.cole.flower.common.response.ResultWithPage;
 import com.zzht.cole.flower.common.tool.ResultTool;
+import com.zzht.service.demo.exception.PersonError;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.zzht.component.demo.api.PersonService;
@@ -32,20 +33,24 @@ public class PersonRestServiceImpl implements PersonRestService{
             p.setUserName("柯尊超");
             list.add(p);
         */
+        if(userId.isEmpty()){
+            return ResultTool.toError("用户名参数不能为空");
+        }
 
         List<Person> list= personService.queryPerson(new PersonExample());
-		ResultWithPage<List<Person>> result = new ResultWithPage<>();
-        result.setData(list);
-        result.setTotal(2);
-        return ResultTool.toResponse(result);
+        return ResultTool.toResponse(list,2);
+
+
     }
 
 	@Override
 	public Object getPerson() {
+        if(1==1){ //假设不符合某种逻辑
+            return ResultTool.toError(PersonError.PARMA_ERROR);
+        }
+
 		Person person = personService.selectByPrimaryKey(1L);
-        Result<Person> result = new Result<>();
-        result.setData(person);
-        return ResultTool.toResponse(result);
+        return ResultTool.toResponse(person);
 	}
 
 
