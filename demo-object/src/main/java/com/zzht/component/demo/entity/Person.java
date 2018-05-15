@@ -1,5 +1,10 @@
 package com.zzht.component.demo.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
+import java.sql.Time;
+import java.util.Date;
+
 public class Person {
     private Long personId;
 

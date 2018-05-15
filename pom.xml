@@ -21,15 +21,15 @@
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <druid.version>1.0.27</druid.version>
         <secore.version>2.1.0</secore.version>
-        <fastjson.version>1.2.30</fastjson.version>
+        <fastjson.version>1.2.47</fastjson.version>
         <hopeobject.version>2.1.5</hopeobject.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <!--jar包输出路径，默认是${project.build.directory}，也就是target
             也可以自定义输出路径，如：D:/tomcat85_30/webapps/ServiceEngine/WEB-INF
         -->
-        <output.basedir>${project.build.directory}</output.basedir>
-        <!--<output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>-->
+        <!--<output.basedir>${project.build.directory}</output.basedir>-->
+        <output.basedir>D:/tomcat85_30/webapps/ServiceEngine/WEB-INF</output.basedir>
     </properties>
 	<dependencies>
         <!-- spring核心包 -->

@@ -3,7 +3,7 @@ package com.zzht.service.demo.exception;
 import com.zzht.cole.flower.common.response.IResponseMessage;
 
 public enum  PersonError implements IResponseMessage {
-    PARMA_ERROR(1101,"参数不能为空");
+    PARMA_ERROR(1101,"参数【{0}】不能为空");
 
     PersonError(int code, String msg) {
         this.code = code;
