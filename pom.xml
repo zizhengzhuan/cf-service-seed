@@ -10,6 +10,10 @@
     <modules>
         <module>sp-demo</module>
         <module>demo-object</module>
+        <module>form-object</module>
+        <module>sp-form</module>
+        <!--<module>bpm-object</module>-->
+        <!--<module>sp-bpm</module>-->
     </modules>
 
     <properties>
@@ -225,6 +229,16 @@
             <groupId>com.zzht</groupId>
             <artifactId>cole-flower-common </artifactId>
             <version>1.0.0-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>4.0</version>
         </dependency>
     </dependencies>
 
