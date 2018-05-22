@@ -14,10 +14,13 @@
     <!-- 添加注解驱动 -->
     <context:annotation-config/>
     <!-- 自动扫描 -->
-    <!--<context:component-scan base-package="com.zzht.component"/>-->
+    <context:component-scan base-package="com.zzht.component.demo"/>
 
-    <!-- 引入配置文件 -->
-    <context:property-placeholder location="conf/application.properties" ignore-unresolvable="true"/>
+    <bean id="yamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+        <property name="resources" value="conf/application.yml"/>
+    </bean>
+
+    <context:property-placeholder properties-ref="yamlProperties" ignore-unresolvable="true"/>
 
     <!-- 配置数据源 -->
     <bean id="dataSource" destroy-method="close"
@@ -40,7 +43,7 @@
     <!-- DAO接口所在包名，Spring会自动查找其下的类 --><!--只扫描带@Repository标签类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
           p:annotationClass="org.springframework.stereotype.Repository"
-          p:basePackage="com.zzht.component.*.dao"
+          p:basePackage="com.zzht.component.demo.dao"
           p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
 
     <!-- 事务管理 -->
