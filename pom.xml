@@ -29,6 +29,7 @@
         <hopeobject.version>2.1.5</hopeobject.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
+        <pageHelper.version>5.1.4</pageHelper.version>
         <!--jar包输出路径，默认是${project.build.directory}，也就是target
             也可以自定义输出路径，如：D:/tomcat85_30/webapps/ServiceEngine/WEB-INF
         -->
@@ -240,6 +241,12 @@
             <artifactId>sqljdbc4</artifactId>
             <version>4.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pageHelper.version}</version>
+        </dependency>
+
     </dependencies>
 
 	<!-- 构建 -->
