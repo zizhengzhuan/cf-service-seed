@@ -11,16 +11,6 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- 添加注解驱动 -->
-    <context:annotation-config/>
-    <!-- 自动扫描 -->
-    <context:component-scan base-package="com.zzht.component.demo"/>
-
-    <bean id="yamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
-        <property name="resources" value="conf/application.yml"/>
-    </bean>
-
-    <context:property-placeholder properties-ref="yamlProperties" ignore-unresolvable="true"/>
 
     <!-- 配置数据源 -->
     <bean id="dataSource" destroy-method="close"

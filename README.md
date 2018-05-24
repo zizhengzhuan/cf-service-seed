@@ -3,9 +3,13 @@
 2.maven配置私有仓库方法，参照《maven配置私有仓库指南》--by 田楠。
 ---
 
-###  cf-service项目说明
+<h2 align="center"> Cole-flowers项目说明</h2>
 
-#### 一、结构
+## 前言
+
+　　项目的最红的发布与运行依然是基于cityserver，这个项目种子文件提供的是：maven管理和持久层换为mybaties，将spring的特性引进来使用；同时对项目结构和规范形成约束。
+
+## 一、结构
 
 + sp-demo: 单独的服务包
 
@@ -17,9 +21,9 @@
   > 服务包和业务实现包以子项目形式存在。
 
 
-#### 二、子项目的结构
+## 二、子项目的结构
 
-#### 2.1 命名规范
+### 2.1 命名规范
 
 * 服务包以`sp-`开头，如`sp-demo`；
 * 服务实现包以`-object`结尾，如`demo-object`;
@@ -41,7 +45,7 @@ pakacge com.zzht.service.demo.webservice
 
 ```
 
-#### 2.2 sp服务包代码结构
+### 2.2 sp服务包代码结构
 
 ```markdown
 ## main
@@ -58,7 +62,7 @@ pakacge com.zzht.service.demo.webservice
 - Service-SOAP-http.xml  SOAP服务地址绑定
 ```
 
-#### 2.3 object实现包结构
+### 2.3 object实现包结构
 
 ``` markdown
 ## main
@@ -75,14 +79,111 @@ pakacge com.zzht.service.demo.webservice
 
 
 
-#### 2.4 maven打包使用
+### 2.4 maven打包使用
 
 ```
 mvn clean install:将打包的jar添加到仓库（本地）
 mvn clean package: 打包
 ```
 
-#### 2.5 TOMCAT 8.x 本地调试环境配置
+### 2.5应用的配置文件
+
+##### 1. 全局配置文件
+
+　　应用的配置文件统一放在`ServiceEngine/conf`里面，`application.yml`，也允许自己项目增加额外配置的文件，非必要情况下不推荐。
+
+​	[YAML规范](http://www.ruanyifeng.com/blog/2016/07/yaml.html)（**尤其注意缩进和冒号之后的空格**）
+
+​	[YAML校验](https://codebeautify.org/yaml-validator)
+
+文件application.yml
+
+```yaml
+## 数据库配置
+###数据库类型：mysql、mssql、oracle
+
+### driverClassName
+### mysql:com.mysql.jdbc.Driver
+### mssql:com.microsoft.sqlserver.jdbc.SQLServerDriver
+### oracle:oracle.jdbc.driver.OracleDriver
+
+## 基础数据库配置
+db: &base1
+  type: mssql
+  driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  url: jdbc:sqlserver://192.168.8.183:1433;DatabaseName=cole_flower
+  username: zzht
+  password: zzht
+  initialSize: 0
+  maxActive: 200
+  maxIdle: 20
+  minIdle: 1
+  maxWait: 6000
+  
+db2: &base2
+  type: mysql
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306:test
+  username: zzht
+  password: zzht
+  initialSize: 0
+  maxActive: 200
+  maxIdle: 20
+  minIdle: 1
+  maxWait: 6000
+
+##具体的项目配置文件可以直接引用基本数据库配置
+oms: *base1
+form: *base2
+```
+
+##### 2.与spring集成
+
+```xml
+<!--省略其他....-->
+<bean id="yamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+        <property name="resources" value="conf/application.yml"/>
+    </bean>
+    <context:property-placeholder properties-ref="yamlProperties" ignore-unresolvable="true"/>
+```
+
+##### 3.JAVA获取配置
+
++ 获取所有配置(Properties)：`AppConfig.Init(homePath).getApplicationProperties()`
++ 按照前缀获取：`getApplicationProperties("oms",false/true)`
++ `AppConfig`依赖`cole-flower-common-1.0.0-RELEASE.jar`
+
+##### 4.workspace使用配置文件
+
+```java
+	Properties props = AppConfig.Init(homePath).getApplicationProperties();
+        String dbType = props.getProperty("oms.type");
+        String dbUrl = props.getProperty("oms.url");
+        String name = props.getProperty("oms.username");
+        String psw = props.getProperty("oms.password");
+        String minIdle =props.getProperty("oms.minIdle");
+        String maxIdle =props.getProperty("oms.maxIdle");
+        int minnum = minIdle==null?1:Integer.valueOf(minIdle);
+        int maxnum = maxIdle==null?1:Integer.valueOf(maxIdle);
+
+        if(dbType.equalsIgnoreCase("mssql")) {
+            dbType = "sql";
+        }
+        // 从jdbcUrl提取地址和数据库
+        dbUrl = URLUtil.extractAddressAndDatabase(dbUrl);
+		//.....其他的和之前没有区别
+//===========分割线:按照前缀获取==========
+//参数：(String prefix,boolean keyWithPrefix)
+//如果keyWithPrefix=true连同前缀一起返回,props不含前缀
+Properties props = AppConfig.Init(homePath).getApplicationProperties("oms");
+String dbType = props.getProperty("type");
+// ohthers.....
+```
+
+
+
+### 2.6  本地调试环境配置
+
 [此部分主要用于指导TOMCAT 8.x 环境下的本地调试环境配置，需以截图和实际的环境相结合]
 ## 环境 
 Windows 10
