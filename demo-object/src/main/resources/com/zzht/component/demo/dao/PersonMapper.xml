@@ -65,7 +65,45 @@
       </foreach>
     </where>
   </sql>
-
+  <sql id="Base_Column_List" >
+    person_id, user_name, age, sex
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zzht.component.demo.entity.PersonExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from person
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from person
+    where person_id = #{personId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from person
+    where person_id = #{personId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zzht.component.demo.entity.PersonExample" >
+    delete from person
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zzht.component.demo.entity.Person" >
+    insert into person (person_id, user_name, age, 
+      sex)
+    values (#{personId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{sex,jdbcType=INTEGER})
+  </insert>
   <insert id="insertSelective" parameterType="com.zzht.component.demo.entity.Person" >
     insert into person
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -97,7 +135,12 @@
       </if>
     </trim>
   </insert>
-
+  <select id="countByExample" parameterType="com.zzht.component.demo.entity.PersonExample" resultType="java.lang.Integer" >
+    select count(*) from person
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update person
     <set >
@@ -118,7 +161,16 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-
+  <update id="updateByExample" parameterType="map" >
+    update person
+    set person_id = #{record.personId,jdbcType=BIGINT},
+      user_name = #{record.userName,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      sex = #{record.sex,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.zzht.component.demo.entity.Person" >
     update person
     <set >
@@ -134,5 +186,11 @@
     </set>
     where person_id = #{personId,jdbcType=BIGINT}
   </update>
-
+  <update id="updateByPrimaryKey" parameterType="com.zzht.component.demo.entity.Person" >
+    update person
+    set user_name = #{userName,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=INTEGER}
+    where person_id = #{personId,jdbcType=BIGINT}
+  </update>
 </mapper>
