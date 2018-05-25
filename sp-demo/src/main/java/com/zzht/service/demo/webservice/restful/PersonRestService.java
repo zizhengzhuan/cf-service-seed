@@ -1,6 +1,7 @@
 package com.zzht.service.demo.webservice.restful;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 import org.apache.cxf.jaxrs.model.wadl.Description;
 import org.apache.cxf.jaxrs.model.wadl.DocTarget;
@@ -16,10 +17,11 @@ public interface PersonRestService {
      * 返回的是List
      * @return
      */
-    @GET
+    @POST
     @Path("/queryPerson")
+    @Consumes(MediaType.APPLICATION_XML)
     @Description(value = "查询人员列表", target = DocTarget.METHOD)
-    public Object queryPerson(@QueryParam("userId") @Description(value = "用户ID",target = DocTarget.PARAM) String userId);
+    public Object queryPerson(@FormParam("userId") @Description(value = "用户ID",target = DocTarget.PARAM) String userId);
 
     /**
      * 查询人员

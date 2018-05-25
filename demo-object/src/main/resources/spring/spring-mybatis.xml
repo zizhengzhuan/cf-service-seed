@@ -11,16 +11,16 @@
 
     <!-- 配置数据源 -->
     <bean id="dataSource" destroy-method="close"
-          class="com.alibaba.druid.pool.DruidDataSource"
+          class="org.apache.commons.dbcp2.BasicDataSource"
           p:driverClassName="${db.driver}"
           p:url="${db.url}"
           p:username="${db.username}"
           p:password="${db.password}"
           p:initialSize="${db.initialSize}"
-          p:maxActive="${db.maxActive}"
+          p:maxTotal="${db.maxActive}"
           p:maxIdle="${db.maxIdle}"
           p:minIdle="${db.minIdle}"
-          p:maxWait="${db.maxWait}"/>
+        />
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
