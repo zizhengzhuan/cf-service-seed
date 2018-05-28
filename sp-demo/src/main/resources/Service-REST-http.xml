@@ -16,7 +16,10 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
         </jaxrs:serviceBeans>
 
         <jaxrs:providers>
-            <ref bean="jsonProvider" />
+            <bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+                <property name="dropRootElement" value="true"/>
+                <property name="dropCollectionWrapperElement" value="true"/>
+            </bean>
         </jaxrs:providers>
 
         <jaxrs:inInterceptors>

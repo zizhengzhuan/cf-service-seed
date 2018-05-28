@@ -22,11 +22,6 @@
     <bean id="ServerCore" class="com.zzht.service.demo.common.ServiceCore">
     </bean>
 
-    <bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
-        <property name="dropRootElement" value="true"/>
-        <property name="dropCollectionWrapperElement" value="true"/>
-    </bean>
-
     <bean id="personService" class="com.zzht.component.demo.api.PersonServiceImpl"/>
         <!--restful webservice bean-->
     <bean id="personRestService" class="com.zzht.service.demo.webservice.restful.PersonRestServiceImpl"/>

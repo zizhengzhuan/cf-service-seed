@@ -26,9 +26,6 @@ public class ServiceCore implements IService {
 
     private ConfigGroup mainGroup = null;
     private Server SEServer;
-    public String mapResultPath;//数据临时存储目录
-    public String mapUrl;//数据临时存储目录的虚拟地址
-    private boolean needToken;//服务是否开启token
     public String loginUrl = "";
     public ConnectionProperty conn = null;
     ServletContext context = null;
@@ -47,23 +44,13 @@ public class ServiceCore implements IService {
         this.logger = this.getServer().getLogger();
         this.mainGroup = SEServer.getConfig().getAt("PROJECT-CONFIG");
         ConfigGroup mapConfig = SEServer.getConfig().getAt("MAPSERVICE-CONFIG");
-        mapResultPath = mapConfig.getValue("MAP_RESULT_PATH");
-        if (mapResultPath == null || mapResultPath.isEmpty()) {
-            mapResultPath = "map";
-        }
 
 
 
         String basePath = this.SEServer.getHome();
         basePath = basePath.substring(0, basePath.length() - 1);
         basePath = basePath.substring(0, basePath.lastIndexOf(File.separator));
-        mapResultPath = basePath + "\\" + mapResultPath;
 
-        mapUrl = mapConfig.getValue("MAP_RESULT_URL");
-
-        //读取配置项判断是否需要开启token
-        //		String tokenCfg = this.mainGroup.getValue("needtoken");
-        //		needToken = tokenCfg.equalsIgnoreCase("true") || tokenCfg.equalsIgnoreCase("1");
 
         //1.加载服务引用的jar文件，一般当前服务对应的jar文件放在services目录下的一个自定义文件夹中
 //        loadOwnerJar();
