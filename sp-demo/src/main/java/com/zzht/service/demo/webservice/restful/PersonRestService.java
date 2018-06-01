@@ -5,6 +5,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.apache.cxf.jaxrs.model.wadl.Description;
 import org.apache.cxf.jaxrs.model.wadl.DocTarget;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author kunhour
@@ -19,7 +20,6 @@ public interface PersonRestService {
      */
     @POST
     @Path("/queryPerson")
-    @Consumes(MediaType.APPLICATION_XML)
     @Description(value = "查询人员列表", target = DocTarget.METHOD)
     public Object queryPerson(@FormParam("userId") @Description(value = "用户ID",target = DocTarget.PARAM) String userId);
 
@@ -29,6 +29,7 @@ public interface PersonRestService {
      */
 	@GET
 	@Path("/getPerson")
-	public Object getPerson();
+    @Description(value = "查询单个人员", target = DocTarget.METHOD)
+	public Object getPerson(@Param("userId") @Description(value="用户名",target = DocTarget.PARAM) String userId);
 
 }

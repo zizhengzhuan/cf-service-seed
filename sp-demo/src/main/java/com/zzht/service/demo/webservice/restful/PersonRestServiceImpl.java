@@ -26,25 +26,24 @@ public class PersonRestServiceImpl implements PersonRestService{
 
     @Override
     public Object queryPerson(String userId) {
-        /*
-        List<Person> list = new ArrayList<Person>();
 
-            PersonPerson p = new Person();
-            p.setAge(1);
-            p.setUserName("柯尊超");
-            list.add(p);
-        */
+//        List<Person> list = new ArrayList<Person>();
+//        PersonPerson p = new Person();
+//        p.setAge(1);
+//        p.setUserName("柯尊超");
+//        list.add(p);
 
-        List<Person> list= personService.queryPerson(new PersonExample());
+        List<Person> list = personService.queryPerson(new PersonExample());
         return ResultTool.toResponse(list);
 
 
     }
 
 	@Override
-	public Object getPerson() {
-        if(1==1){ //假设不符合某种逻辑
-            return ResultTool.toError(PersonError.PARMA_ERROR,"用户名");
+	public Object getPerson(String uId) {
+        //假设不符合某种逻辑
+        if(uId==null || uId.isEmpty()){
+            return ResultTool.toError(PersonError.PARMA_ERROR,"userId");
         }
 
 		Person person = personService.selectByPrimaryKey(1L);

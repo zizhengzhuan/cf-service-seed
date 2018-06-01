@@ -29,6 +29,6 @@ public enum  PersonError implements IResponseMessage {
 
     @Override
     public String getMessage() {
-        return this.msg;
+        return msg;
     }
 }
