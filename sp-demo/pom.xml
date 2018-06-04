@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sp-demo</artifactId>
-
+    <version>1.0.0-snapshots</version>
     <dependencies>
         <dependency>
             <groupId>com.zzht</groupId>
