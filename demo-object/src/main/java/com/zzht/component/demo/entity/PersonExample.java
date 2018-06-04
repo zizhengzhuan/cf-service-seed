@@ -13,10 +13,10 @@ public class PersonExample {
 
     protected boolean distinct;
 
-    protected List<Criteria> oredCriteria;
+    protected List<CriteriaBase> oredCriteria;
 
     public PersonExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<CriteriaBase>();
     }
 
     public void setOrderByClause(String orderByClause) {
@@ -35,30 +35,30 @@ public class PersonExample {
         return distinct;
     }
 
-    public List<Criteria> getOredCriteria() {
+    public List<CriteriaBase> getOredCriteria() {
         return oredCriteria;
     }
 
-    public void or(Criteria criteria) {
+    public void or(CriteriaBase criteria) {
         oredCriteria.add(criteria);
     }
 
-    public Criteria or() {
-        Criteria criteria = createCriteriaInternal();
+    public CriteriaBase or() {
+        CriteriaBase criteria = createCriteriaInternal();
         oredCriteria.add(criteria);
         return criteria;
     }
 
-    public Criteria createCriteria() {
-        Criteria criteria = createCriteriaInternal();
+    public CriteriaBase createCriteria() {
+        CriteriaBase criteria = createCriteriaInternal();
         if (oredCriteria.size() == 0) {
             oredCriteria.add(criteria);
         }
         return criteria;
     }
 
-    protected Criteria createCriteriaInternal() {
-        Criteria criteria = new Criteria();
+    protected CriteriaBase createCriteriaInternal() {
+        CriteriaBase criteria = new CriteriaBase();
         return criteria;
     }
 
@@ -68,10 +68,10 @@ public class PersonExample {
         distinct = false;
     }
 
-    protected abstract static class GeneratedCriteria {
+    protected abstract static class BaseGeneratedCriteria {
         protected List<Criterion> criteria;
 
-        protected GeneratedCriteria() {
+        protected BaseGeneratedCriteria() {
             super();
             criteria = new ArrayList<Criterion>();
         }
@@ -109,260 +109,260 @@ public class PersonExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andPersonIdIsNull() {
+        public CriteriaBase andPersonIdIsNull() {
             addCriterion("person_id is null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdIsNotNull() {
+        public CriteriaBase andPersonIdIsNotNull() {
             addCriterion("person_id is not null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdEqualTo(Long value) {
+        public CriteriaBase andPersonIdEqualTo(Long value) {
             addCriterion("person_id =", value, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdNotEqualTo(Long value) {
+        public CriteriaBase andPersonIdNotEqualTo(Long value) {
             addCriterion("person_id <>", value, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdGreaterThan(Long value) {
+        public CriteriaBase andPersonIdGreaterThan(Long value) {
             addCriterion("person_id >", value, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdGreaterThanOrEqualTo(Long value) {
+        public CriteriaBase andPersonIdGreaterThanOrEqualTo(Long value) {
             addCriterion("person_id >=", value, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdLessThan(Long value) {
+        public CriteriaBase andPersonIdLessThan(Long value) {
             addCriterion("person_id <", value, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdLessThanOrEqualTo(Long value) {
+        public CriteriaBase andPersonIdLessThanOrEqualTo(Long value) {
             addCriterion("person_id <=", value, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdIn(List<Long> values) {
+        public CriteriaBase andPersonIdIn(List<Long> values) {
             addCriterion("person_id in", values, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdNotIn(List<Long> values) {
+        public CriteriaBase andPersonIdNotIn(List<Long> values) {
             addCriterion("person_id not in", values, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdBetween(Long value1, Long value2) {
+        public CriteriaBase andPersonIdBetween(Long value1, Long value2) {
             addCriterion("person_id between", value1, value2, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andPersonIdNotBetween(Long value1, Long value2) {
+        public CriteriaBase andPersonIdNotBetween(Long value1, Long value2) {
             addCriterion("person_id not between", value1, value2, "personId");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameIsNull() {
+        public CriteriaBase andUserNameIsNull() {
             addCriterion("user_name is null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameIsNotNull() {
+        public CriteriaBase andUserNameIsNotNull() {
             addCriterion("user_name is not null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameEqualTo(String value) {
+        public CriteriaBase andUserNameEqualTo(String value) {
             addCriterion("user_name =", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameNotEqualTo(String value) {
+        public CriteriaBase andUserNameNotEqualTo(String value) {
             addCriterion("user_name <>", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameGreaterThan(String value) {
+        public CriteriaBase andUserNameGreaterThan(String value) {
             addCriterion("user_name >", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameGreaterThanOrEqualTo(String value) {
+        public CriteriaBase andUserNameGreaterThanOrEqualTo(String value) {
             addCriterion("user_name >=", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameLessThan(String value) {
+        public CriteriaBase andUserNameLessThan(String value) {
             addCriterion("user_name <", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameLessThanOrEqualTo(String value) {
+        public CriteriaBase andUserNameLessThanOrEqualTo(String value) {
             addCriterion("user_name <=", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameLike(String value) {
+        public CriteriaBase andUserNameLike(String value) {
             addCriterion("user_name like", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameNotLike(String value) {
+        public CriteriaBase andUserNameNotLike(String value) {
             addCriterion("user_name not like", value, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameIn(List<String> values) {
+        public CriteriaBase andUserNameIn(List<String> values) {
             addCriterion("user_name in", values, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameNotIn(List<String> values) {
+        public CriteriaBase andUserNameNotIn(List<String> values) {
             addCriterion("user_name not in", values, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameBetween(String value1, String value2) {
+        public CriteriaBase andUserNameBetween(String value1, String value2) {
             addCriterion("user_name between", value1, value2, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andUserNameNotBetween(String value1, String value2) {
+        public CriteriaBase andUserNameNotBetween(String value1, String value2) {
             addCriterion("user_name not between", value1, value2, "userName");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeIsNull() {
+        public CriteriaBase andAgeIsNull() {
             addCriterion("age is null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeIsNotNull() {
+        public CriteriaBase andAgeIsNotNull() {
             addCriterion("age is not null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeEqualTo(Integer value) {
+        public CriteriaBase andAgeEqualTo(Integer value) {
             addCriterion("age =", value, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeNotEqualTo(Integer value) {
+        public CriteriaBase andAgeNotEqualTo(Integer value) {
             addCriterion("age <>", value, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeGreaterThan(Integer value) {
+        public CriteriaBase andAgeGreaterThan(Integer value) {
             addCriterion("age >", value, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeGreaterThanOrEqualTo(Integer value) {
+        public CriteriaBase andAgeGreaterThanOrEqualTo(Integer value) {
             addCriterion("age >=", value, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeLessThan(Integer value) {
+        public CriteriaBase andAgeLessThan(Integer value) {
             addCriterion("age <", value, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeLessThanOrEqualTo(Integer value) {
+        public CriteriaBase andAgeLessThanOrEqualTo(Integer value) {
             addCriterion("age <=", value, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeIn(List<Integer> values) {
+        public CriteriaBase andAgeIn(List<Integer> values) {
             addCriterion("age in", values, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeNotIn(List<Integer> values) {
+        public CriteriaBase andAgeNotIn(List<Integer> values) {
             addCriterion("age not in", values, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeBetween(Integer value1, Integer value2) {
+        public CriteriaBase andAgeBetween(Integer value1, Integer value2) {
             addCriterion("age between", value1, value2, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andAgeNotBetween(Integer value1, Integer value2) {
+        public CriteriaBase andAgeNotBetween(Integer value1, Integer value2) {
             addCriterion("age not between", value1, value2, "age");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexIsNull() {
+        public CriteriaBase andSexIsNull() {
             addCriterion("sex is null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexIsNotNull() {
+        public CriteriaBase andSexIsNotNull() {
             addCriterion("sex is not null");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexEqualTo(Integer value) {
+        public CriteriaBase andSexEqualTo(Integer value) {
             addCriterion("sex =", value, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexNotEqualTo(Integer value) {
+        public CriteriaBase andSexNotEqualTo(Integer value) {
             addCriterion("sex <>", value, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexGreaterThan(Integer value) {
+        public CriteriaBase andSexGreaterThan(Integer value) {
             addCriterion("sex >", value, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexGreaterThanOrEqualTo(Integer value) {
+        public CriteriaBase andSexGreaterThanOrEqualTo(Integer value) {
             addCriterion("sex >=", value, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexLessThan(Integer value) {
+        public CriteriaBase andSexLessThan(Integer value) {
             addCriterion("sex <", value, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexLessThanOrEqualTo(Integer value) {
+        public CriteriaBase andSexLessThanOrEqualTo(Integer value) {
             addCriterion("sex <=", value, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexIn(List<Integer> values) {
+        public CriteriaBase andSexIn(List<Integer> values) {
             addCriterion("sex in", values, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexNotIn(List<Integer> values) {
+        public CriteriaBase andSexNotIn(List<Integer> values) {
             addCriterion("sex not in", values, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexBetween(Integer value1, Integer value2) {
+        public CriteriaBase andSexBetween(Integer value1, Integer value2) {
             addCriterion("sex between", value1, value2, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
 
-        public Criteria andSexNotBetween(Integer value1, Integer value2) {
+        public CriteriaBase andSexNotBetween(Integer value1, Integer value2) {
             addCriterion("sex not between", value1, value2, "sex");
-            return (Criteria) this;
+            return (CriteriaBase) this;
         }
     }
 
-    public static class Criteria extends GeneratedCriteria {
+    public static class CriteriaBase extends BaseGeneratedCriteria {
 
-        protected Criteria() {
+        protected CriteriaBase() {
             super();
         }
     }

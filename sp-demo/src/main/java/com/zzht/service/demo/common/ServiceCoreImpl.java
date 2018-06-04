@@ -22,7 +22,7 @@ import javax.servlet.ServletContext;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  */
-public class ServiceCore implements IService {
+public class ServiceCoreImpl implements IService {
 
     private ConfigGroup mainGroup = null;
     private Server seServer;
@@ -57,7 +57,7 @@ public class ServiceCore implements IService {
 
     }
 
-    public ServiceCore() {
+    public ServiceCoreImpl() {
 
     }
 

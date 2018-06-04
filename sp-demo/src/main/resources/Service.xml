@@ -15,11 +15,11 @@
         http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
         http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
         http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd"
->
+    >
     <!-- 添加注解驱动 -->
     <context:annotation-config/>
 
-    <bean id="ServerCore" class="com.zzht.service.demo.common.ServiceCore">
+    <bean id="ServerCore" class="com.zzht.service.demo.common.ServiceCoreImpl">
     </bean>
 
     <bean id="personService" class="com.zzht.component.demo.api.PersonServiceImpl"/>
