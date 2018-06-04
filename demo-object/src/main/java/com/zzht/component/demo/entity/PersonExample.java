@@ -2,7 +2,12 @@ package com.zzht.component.demo.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 类的描述
+ * @author : kunhour
+ * @version :1.0
+ * @since : 2018/6/4 10:38
+*/
 public class PersonExample {
     protected String orderByClause;
 

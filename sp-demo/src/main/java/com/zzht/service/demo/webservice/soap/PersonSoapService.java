@@ -6,12 +6,21 @@ import javax.jws.WebService;
 import java.util.List;
 
 /**
- * Created by kunhour on 2018/4/16.
- */
+ * 类的描述
+ * @author : kunhour
+ * @version :1.0
+ * @since : 2018/6/4 10:38
+*/
 @WebService
 public interface PersonSoapService {
-
-   public void createPerson(Person preson);
-
+   /**
+    * 创建
+    * @param person 人员
+    */
+   public void createPerson(Person person);
+   /**
+    * 创建
+    * @return List
+    */
    public List<Person> queryPerson();
 }

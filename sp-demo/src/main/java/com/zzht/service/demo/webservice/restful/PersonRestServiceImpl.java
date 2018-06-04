@@ -15,7 +15,6 @@ import com.zzht.component.demo.entity.PersonExample;
  * Created by kunhour on 2018/4/16.
  * restful风格接口
  */
-// @RestController
 public class PersonRestServiceImpl implements PersonRestService{
 
 	@Autowired

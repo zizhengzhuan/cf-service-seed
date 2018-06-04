@@ -14,10 +14,11 @@ import org.apache.ibatis.annotations.Param;
 @Path("/person")
 @Produces({ "application/json", "application/xml", "application/javascript", "text/html" })
 public interface PersonRestService {
-    /**
-     * 返回的是List
-     * @return
-     */
+   /**
+    * 查询人员列表
+    * @param userId 用户ID
+    * @return  人员信息
+    */
     @POST
     @Path("/queryPerson")
     @Description(value = "查询人员列表", target = DocTarget.METHOD)
@@ -25,6 +26,7 @@ public interface PersonRestService {
 
     /**
      * 查询人员
+     * @param userId
      * @return 响应
      */
 	@GET

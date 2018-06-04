@@ -8,9 +8,11 @@ import javax.jws.WebService;
 import java.util.List;
 
 /**
- * Created by kunhour on 2018/4/16.
- * soap风格接口
- */
+ * 类的描述
+ * @author : kunhour
+ * @version :1.0
+ * @since : 2018/6/4 10:39
+*/
 @WebService
 public class PersonSoapServiceImpl implements PersonSoapService {
 

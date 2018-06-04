@@ -1,10 +1,11 @@
 package com.zzht.component.demo.entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
-import java.sql.Time;
-import java.util.Date;
-
+/**
+ * 类的描述
+ * @author : kunhour
+ * @version :1.0
+ * @since : 2018/6/4 10:39
+*/
 public class Person {
     private Long personId;
 
