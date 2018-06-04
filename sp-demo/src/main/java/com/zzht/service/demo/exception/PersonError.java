@@ -1,9 +1,15 @@
 package com.zzht.service.demo.exception;
 
 import com.zzht.cole.flower.common.response.IResponseMessage;
-
+/**
+ * 类的描述
+ * @author : kunhour
+ * @version :1.0
+ * @since : 2018/6/4 10:14
+*/
 public enum  PersonError implements IResponseMessage {
-    PARMA_ERROR(1101,"参数【{0}】不能为空");
+    /**错误*/
+    PARAM_ERROR(1101,"参数【{0}】不能为空");
 
     PersonError(int code, String msg) {
         this.code = code;

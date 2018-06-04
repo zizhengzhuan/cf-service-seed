@@ -1,10 +1,7 @@
 package com.zzht.service.demo.webservice.restful;
 
-import java.util.Date;
 import java.util.List;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.zzht.cole.flower.common.tool.ResultTool;
 import com.zzht.service.demo.exception.PersonError;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +24,6 @@ public class PersonRestServiceImpl implements PersonRestService{
     @Override
     public Object queryPerson(String userId) {
 
-//        List<Person> list = new ArrayList<Person>();
-////        PersonPerson p = new Person();
-////        p.setAge(1);
-////        p.setUserName("柯尊超");
-////        list.add(p);
-
         List<Person> list = personService.queryPerson(new PersonExample());
         return ResultTool.toResponse(list);
     }
@@ -41,7 +32,7 @@ public class PersonRestServiceImpl implements PersonRestService{
 	public Object getPerson(String uId) {
         //假设不符合某种逻辑
         if(uId==null || uId.isEmpty()){
-            return ResultTool.toError(PersonError.PARMA_ERROR,"userId");
+            return ResultTool.toError(PersonError.PARAM_ERROR,"userId");
         }
 
 		Person person = personService.selectByPrimaryKey(1L);

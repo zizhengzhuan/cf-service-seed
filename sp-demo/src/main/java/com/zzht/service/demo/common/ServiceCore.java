@@ -25,14 +25,14 @@ import javax.servlet.ServletContext;
 public class ServiceCore implements IService {
 
     private ConfigGroup mainGroup = null;
-    private Server SEServer;
+    private Server seServer;
     public String loginUrl = "";
     public ConnectionProperty conn = null;
     ServletContext context = null;
     public Logger logger = null;
 
     public Server getServer() {
-        return this.SEServer;
+        return this.seServer;
     }
 
     /**
@@ -40,21 +40,19 @@ public class ServiceCore implements IService {
      */
     @Override
     public void setServer(Server seServer) {
-        this.SEServer = seServer;
+        this.seServer = seServer;
         this.logger = this.getServer().getLogger();
-        this.mainGroup = SEServer.getConfig().getAt("PROJECT-CONFIG");
-        ConfigGroup mapConfig = SEServer.getConfig().getAt("MAPSERVICE-CONFIG");
+        this.mainGroup = this.seServer.getConfig().getAt("PROJECT-CONFIG");
+        ConfigGroup mapConfig = this.seServer.getConfig().getAt("MAPSERVICE-CONFIG");
 
 
-
-        String basePath = this.SEServer.getHome();
+        String basePath = this.seServer.getHome();
         basePath = basePath.substring(0, basePath.length() - 1);
         basePath = basePath.substring(0, basePath.lastIndexOf(File.separator));
 
 
         //1.加载服务引用的jar文件，一般当前服务对应的jar文件放在services目录下的一个自定义文件夹中
 //        loadOwnerJar();
-
 
 
     }
@@ -70,15 +68,16 @@ public class ServiceCore implements IService {
     }
 
     private void loadOwnerJar() {
-        String servicePath = SEServer.getServicePath();
+        String servicePath = seServer.getServicePath();
         String personalJarPath = servicePath + "/projectLib/";
         //修改成引用jar中的任意存在的一个类路径
         String typicalClass = "com.zzht.component.demo.api.PersonServiceImpl";
-        SEServer.loadCustomLibs(typicalClass, personalJarPath);
+        seServer.loadCustomLibs(typicalClass, personalJarPath);
     }
 
     /**
      * 获取workspace
+     *
      * @return
      * @throws EcityException
      */
@@ -105,6 +104,7 @@ public class ServiceCore implements IService {
     public String getServiceName() {
         return "XXXServer(服务描述)";
     }
+
     @Override
     public String getServiceDescription() {
         if ((this.mainGroup == null) || (this.mainGroup.getAt("Name") == null)) {
@@ -112,6 +112,7 @@ public class ServiceCore implements IService {
         }
         return this.mainGroup.getAt("Name").description;
     }
+
     @Override
     public String getServiceBrief() {
         if ((this.mainGroup == null) || (this.mainGroup.getAt("Name") == null)) {
@@ -119,11 +120,11 @@ public class ServiceCore implements IService {
         }
         return this.mainGroup.getAt("Name").value;
     }
+
     @Override
     public void clear() {
 
     }
-
 
 
 }
