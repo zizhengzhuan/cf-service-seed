@@ -28,15 +28,13 @@ public class PersonRestServiceImpl implements PersonRestService{
     public Object queryPerson(String userId) {
 
 //        List<Person> list = new ArrayList<Person>();
-//        PersonPerson p = new Person();
-//        p.setAge(1);
-//        p.setUserName("柯尊超");
-//        list.add(p);
+////        PersonPerson p = new Person();
+////        p.setAge(1);
+////        p.setUserName("柯尊超");
+////        list.add(p);
 
         List<Person> list = personService.queryPerson(new PersonExample());
         return ResultTool.toResponse(list);
-
-
     }
 
 	@Override
