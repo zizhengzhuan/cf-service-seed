@@ -10,8 +10,8 @@
     <modules>
         <module>sp-demo</module>
         <module>demo-object</module>
-        <!--<module>bpm-object</module>-->
-        <!--<module>sp-bpm</module>-->
+        <module>form-object</module>
+        <module>sp-form</module>
     </modules>
 
     <properties>
